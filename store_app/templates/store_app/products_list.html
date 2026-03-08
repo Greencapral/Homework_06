@@ -1,0 +1,29 @@
+{% extends 'store_app/base.html' %}
+
+{% block header %}
+    <title>Список товаров</title>
+{% endblock %}
+
+{% block body %}
+    {% for product in products %}
+
+        <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+            <div class="card-header">Перечень товаров</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                <p>Категория товара: {{ product.category }}</p>
+                <p>Цена за единицу: {{ product.price }}</p>
+                <a class="nav-link active" aria-current="page" href="{% url 'product_detail' product.id %}">
+                    <button type="button" class="btn btn-outline-info">Подробнее</button>
+                </a>
+            </div>
+        </div>
+    {% empty %}
+        <p>Список товаров пуст!</p>
+    {% endfor %}
+
+
+
+{% endblock %}
+

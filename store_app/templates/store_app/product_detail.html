@@ -1,0 +1,15 @@
+{% extends 'store_app/base.html' %}
+
+{% block header %}
+    <title>Детальная информация о товаре</title>
+{% endblock %}
+
+{% block body %}
+    <p class="h5">Наименование товара: {{ product.name }}</p>
+    <h1 class="h6">Категория товара: {{ product.category }}</h1>
+    <h2 class="h6">Описание товара: {{ product.description }}</h2>
+    <h2 class="h6">Стоимость за единицу: {{ product.price }}</h2>
+    <a href="{% url 'products_list' %}" class="btn btn-secondary mt-3">Назад к списку</a>
+
+{% endblock %}
+

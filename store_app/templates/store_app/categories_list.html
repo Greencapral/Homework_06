@@ -1,0 +1,23 @@
+{% extends 'store_app/base.html' %}
+
+{% block header %}
+    <title>Список категорий</title>
+{% endblock %}
+
+{% block body %}
+    {% for category in categories %}
+
+        <div class="list-group">
+            <div class="list-group-item">
+                <h5>{{ category.name }}</h5>
+                <h6>Описание категории: {{ category.description }}</h6>
+            </div>
+        </div>
+    {% empty %}
+        <p>Список категорий пуст!</p>
+    {% endfor %}
+
+
+
+{% endblock %}
+
